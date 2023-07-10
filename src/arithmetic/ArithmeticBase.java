@@ -6,7 +6,13 @@
 package arithmetic;
 
 import java.util.Scanner;
-
+enum ArithmeticOperation 
+{
+    PLUS,
+    MINUS,
+    TIMES,
+    DIVIDE
+}
 /** This class takes String input plus,minus,divide and times
  * from user and execute the arithmetic operation
  * change the code to use enum instead String and mention the advantage of enum.
@@ -20,7 +26,8 @@ public class ArithmeticBase
         {
         Scanner sc =new Scanner(System.in);
         System.out.println("Enter arithmetic operation to Perform: ");
-        String s= sc.next();
+        ArithmeticOperation operation = ArithmeticOperation.valueOf(sc.next().toUpperCase());
+
         switch (s.toUpperCase()) 
         {
             case "PLUS":
