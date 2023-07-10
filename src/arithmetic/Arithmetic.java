@@ -8,6 +8,15 @@ package arithmetic;
 
 import java.util.Scanner;
 import static java.time.Clock.system;
+enum ArithmeticOperation 
+{
+    PLUS,
+    MINUS,
+    TIMES,
+    DIVIDE
+}
+
+
 
 /** This class calls the method to perform 
  * arithmetic operations based on user input
@@ -23,7 +32,9 @@ public class Arithmetic
      */
     public static void main(String[] args) 
     {
-       
+       String operationInput = scanner.next();
+ ArithmeticOperation operation = ArithmeticOperation.valueOf(operationInput.toUpperCase());
+
         ArithmeticBase r= new ArithmeticBase();
         Scanner in= new Scanner(System.in);
         int n= in.nextInt();
